@@ -9,6 +9,7 @@ import { ClientComponent } from './pages/client/client.component';
 import { CiteComponent } from './pages/cite/cite.component';
 import { BillingComponent } from './pages/billing/billing.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   {path : 'worker', component: WorkerComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
         RouterOutlet,
         SharedModule,
         RouterModule.forRoot(routes),
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
   exports: [RouterModule],
   providers: [],
