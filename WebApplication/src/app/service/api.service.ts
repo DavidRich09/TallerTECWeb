@@ -6,14 +6,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
 
-
-  url:string = "https://localhost:44349/Api/saveWorker";
+  url:string = "http://localhost:9968/";
 
   constructor(private http: HttpClient) { }
 
   public PostWorker(body:any){
-    return this.http.post(this.url, body);
-  }
 
+    let urlTrue = this.url + "Api/saveWorker";
+
+    return this.http.post(urlTrue, body);
+
+  }
 
 }

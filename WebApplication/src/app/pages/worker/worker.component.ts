@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/service/api.service';
   ]
 })
 export class WorkerComponent implements OnInit {
+
   cedula: any;
   idNumber: any;
   name: any;
@@ -16,7 +17,6 @@ export class WorkerComponent implements OnInit {
   dateAccess: any;
   dateBorn: any;
   password: any;
-
 
   constructor(private Api : ApiService) { }
 
@@ -40,7 +40,21 @@ export class WorkerComponent implements OnInit {
           rol: "Worker",
           password: this.password
         }).subscribe((data) => {
-          console.log(data);
+
+
+          //castear data a un objeto json
+          let json = JSON.parse(JSON.stringify(data));
+
+          console.log(json);
+
+          //Preguntar si elemento "message" de data es igual a "Worker created"
+          if (json["message"] == "worker repeat") {
+            alert("Trabajador repetido");
+          } else {
+            alert("Trabajador creado");
+          }
+
+
         });
 
       } else {
