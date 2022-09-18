@@ -7,12 +7,30 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
 
-  url:string = "https://localhost:44349/Api/saveWorker";
+  url:string = "http://localhost:9968/";
 
   constructor(private http: HttpClient) { }
 
   public PostWorker(body:any){
-    return this.http.post(this.url, body);
+
+    let urlTrue = this.url + "Api/saveWorker";
+
+    return this.http.post(urlTrue, body);
+  }
+
+
+  public PostClient(body:any){
+
+    let urlClient = this.url + "Client/saveClient";
+
+    return this.http.post(urlClient, body);
+  }
+
+  public PostCite(body:any){
+
+    let urlCite = this.url + "Quote/saveQuote";
+
+    return this.http.post(urlCite, body);
   }
 
 

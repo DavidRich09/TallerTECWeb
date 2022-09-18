@@ -1,1 +1,75 @@
-<p>client works!</p>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-6">
+        <div class="col-sm-6">
+          <h1>Registrar cliente</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Formulario de cliente</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-10">
+          <!-- general form elements -->
+          <div class="card card-cyan">
+            <div class="card-header">
+              <h3 class="card-title">Registrar cliente</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Cédula</label>
+                  <input type="text" [(ngModel)]="idNumber" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su cédula">
+                </div>
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" [(ngModel)]="name" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su nombre completo">
+                </div>
+                <div class="form-group">
+                  <label>Usuario</label>
+                    <input type="text" [(ngModel)]="user" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su usuario">
+                </div>
+
+                <div class="form-group">
+                  <label>Correo electronico</label>
+                    <input type="email"  [(ngModel)]="email" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su correo">
+                </div>
+                  <!-- /.input group
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña</label>
+                  <input type="password" [(ngModel)]="password" [ngModelOptions] = "{standalone: true}" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su constraseña">
+                </div> -->
+
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" (click)="saveClient()" class="btn btn-primary">Guardar cliente</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+          <!-- /.card -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
