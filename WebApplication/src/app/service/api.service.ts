@@ -20,13 +20,6 @@ export class ApiService {
   }
 
 
-  public PostClient(body:any){
-
-    let urlClient = this.url + "Client/saveClient";
-
-    return this.http.post(urlClient, body);
-  }
-
   public PostCite(body:any){
 
     let urlCite = this.url + "Quote/saveQuote";
