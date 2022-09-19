@@ -6,35 +6,20 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in or Register to proceed</p>
+        <p class="login-box-msg">Rellene los campos con la informacion solicitada</p>
 
         <form>
 
           <div class="input-group mb-3">
             <input type="email" [(ngModel)]="id" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Cedula">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope" style="color: rgb(48, 37, 37);"></span>
-              </div>
-            </div>
           </div>
 
           <div class="input-group mb-3">
-            <input type="email" [(ngModel)]="name" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Fullname">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope" style="color: rgb(48, 37, 37);"></span>
-              </div>
-            </div>
+            <input type="email" [(ngModel)]="name" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Nombre Completo">
           </div>
 
           <div class="input-group mb-3">
             <input type="email" [(ngModel)]="user" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Usuario">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope" style="color: rgb(48, 37, 37);"></span>
-              </div>
-            </div>
           </div>
 
           <div class="input-group mb-3">
@@ -57,8 +42,12 @@
 
           <div class="row">
             <!-- /.col -->
-            <div class="col-4 text-right">
-              <button type="submit" (click)="Register()" class="btn btn-outline-secondary btn-block" >Register</button>
+            <div class="col-6 text-right">
+              <button type="primary" (click)="Back()" class="btn btn-outline-secondary btn-block" >Volver</button>
+            </div>
+
+            <div class="col-6 text-right">
+              <button type="submit" (click)="Register()" class="btn btn-outline-secondary btn-block" >Registrar Usuario</button>
             </div>
             <!-- /.col -->
           </div>

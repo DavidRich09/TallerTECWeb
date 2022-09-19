@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +20,6 @@ export class ApiService {
   }
 
 
-  public PostClient(body:any){
-
-    let urlClient = this.url + "Client/saveClient";
-
-    return this.http.post(urlClient, body);
-  }
-
   public PostCite(body:any){
 
     let urlCite = this.url + "Quote/saveQuote";
@@ -33,5 +27,29 @@ export class ApiService {
     return this.http.post(urlCite, body);
   }
 
+
+  public  PostClient(body:any){
+
+    let urlTrue = this.url + "Client/saveClientClient";
+
+    return this.http.post(urlTrue, body);
+
+  }
+
+  public GetClientById(id : string){
+
+    let urlTrue = this.url + "Client/requestClient/" + id;
+
+    return this.http.get(urlTrue);
+
+  }
+
+  public GetWorkerById(id : string){
+
+      let urlTrue = this.url + "Api/requestWorker/" + id;
+
+      return this.http.get(urlTrue);
+
+  }
 
 }
