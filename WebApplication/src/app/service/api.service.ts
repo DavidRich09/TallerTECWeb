@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,29 @@ export class ApiService {
     return this.http.get(urlReportL);
   }
 
+
+  public  PostClient(body:any){
+
+    let urlTrue = this.url + "Client/saveClientClient";
+
+    return this.http.post(urlTrue, body);
+
+  }
+
+  public GetClientById(id : string){
+
+    let urlTrue = this.url + "Client/requestClient/" + id;
+
+    return this.http.get(urlTrue);
+
+  }
+
+  public GetWorkerById(id : string){
+
+      let urlTrue = this.url + "Api/requestWorker/" + id;
+
+      return this.http.get(urlTrue);
+
+  }
 
 }
