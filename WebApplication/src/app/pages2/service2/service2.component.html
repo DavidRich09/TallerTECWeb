@@ -1,0 +1,79 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-6">
+        <div class="col-sm-6">
+          <h1>Solicitar Cita</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Agendar Cita</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-10">
+          <!-- general form elements -->
+          <div class="card card-cyan">
+            <div class="card-header">
+              <h3 class="card-title">Solicitar Cita</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Placa del Vehiculo</label>
+                  <input type="text" [(ngModel)]="plateNumber" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese la placa del vehiculo">
+                </div>
+                <div class="form-group">
+                  <label>Fecha de ingreso</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" [(ngModel)]="appointmentdate" [ngModelOptions] = "{standalone: true}" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <label>Sucursal:</label>
+                  <select [(ngModel)]="office" [ngModelOptions] = "{standalone: true}" class="form-control" id="OfficeSelection">
+                    <option>Worker</option>
+                    <option>Client</option>
+                  </select>
+                </div>
+                <div class="form-group mb-3">
+                  <label>Servicio:</label>
+                  <select [(ngModel)]="service" [ngModelOptions] = "{standalone: true}" class="form-control" id="ServiceSelection">
+                    <option>Worker</option>
+                    <option>Client</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" (click)="makeAppointment()" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+          <!-- /.card -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
