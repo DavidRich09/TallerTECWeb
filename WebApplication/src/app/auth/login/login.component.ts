@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   email: any;
   password: any;
 
-  constructor() { }
+  constructor( private router: Router ) { }
 
 
   ngOnInit(): void {
@@ -22,6 +22,15 @@ export class LoginComponent implements OnInit {
     console.log("login");
     console.log("role "+ this.role);
     console.log("email "+ this.email);
+
+    if (this.role == "Worker") {
+      this.router.navigate(['/workers']);
+    }
+    else if (this.role == "Client") {
+      this.router.navigate(['/clients']);
+    } else {
+      alert("Invalid role");
+    }
 
   }
 
