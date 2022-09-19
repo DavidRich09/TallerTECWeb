@@ -6,6 +6,7 @@ import { BillingComponent } from "./billing/billing.component";
 import { CiteComponent } from "./cite/cite.component";
 import { ClientComponent } from "./client/client.component";
 import { WorkerComponent } from "./worker/worker.component";
+import { ReportComponent} from "./reports/report.component";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { SharedModule } from "../shared/shared.module";
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path : "client", component: ClientComponent},
       {path : "cite", component: CiteComponent},
       {path : "billing", component: BillingComponent},
+      {path : "report", component: ReportComponent},
     ]
   }
 ];

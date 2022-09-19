@@ -5,6 +5,7 @@ import { BillingComponent } from "./billing/billing.component";
 import { CiteComponent } from "./cite/cite.component";
 import { ClientComponent } from "./client/client.component";
 import { WorkerComponent } from "./worker/worker.component";
+import { ReportComponent} from "./reports/report.component";
 import { SharedModule } from "../shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -14,13 +15,15 @@ import {HttpClientModule} from "@angular/common/http";
     BillingComponent,
     CiteComponent,
     ClientComponent,
-    WorkerComponent
+    WorkerComponent,
+    ReportComponent
   ],
   exports: [
     BillingComponent,
     CiteComponent,
     ClientComponent,
-    WorkerComponent
+    WorkerComponent,
+    ReportComponent
   ],
   imports: [
     CommonModule,

@@ -33,5 +33,15 @@ export class ApiService {
     return this.http.post(urlCite, body);
   }
 
+  public ClientReport(){
+    let urlReportC = this.url + "Report/ClientReport"
+    return this.http.get(urlReportC);
+  }
+
+  public LicReport(){
+    let urlReportL = this.url + "Report/LicReport"
+    return this.http.get(urlReportL);
+  }
+
 
 }
