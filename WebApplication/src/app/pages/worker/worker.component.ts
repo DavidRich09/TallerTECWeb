@@ -59,6 +59,7 @@ export class WorkerComponent implements OnInit {
 
       } else {
         alert("La cedula solo debe contener numeros");
+
       }
     }
   }
