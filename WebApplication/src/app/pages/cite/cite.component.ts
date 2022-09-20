@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
 
+/**
+ * Definicion de asociaciones
+ */
 @Component({
   selector: 'app-cite',
   templateUrl: './cite.component.html',
@@ -8,6 +11,10 @@ import { ApiService } from 'src/app/service/api.service';
 
   ]
 })
+
+/**
+ * Definicion de las vaiables asociadas a los campos de texto
+ */
 export class CiteComponent implements OnInit {
   responsible: any;
   assistant: any;
@@ -17,11 +24,18 @@ export class CiteComponent implements OnInit {
   office: any;
   date: any;
 
+  /**
+   * Constructor del API para conectar la base de datos con la pagina web
+   * @param Api
+   */
   constructor(private Api : ApiService) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * Metodo donde se validan las entradas y se envia la infromacion a la base de datos
+   */
   saveCite(){
     //verificar que los campos no esten vacios
     if (this.licensePlate == undefined || this.service == undefined || this.client == undefined ||

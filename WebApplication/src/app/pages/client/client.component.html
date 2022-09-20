@@ -1,5 +1,5 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
+  <!-- Contenido del Header -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-6">
@@ -16,7 +16,7 @@
     </div><!-- /.container-fluid -->
   </section>
 
-  <!-- Main content -->
+  <!-- Contenido del main -->
   <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -31,19 +31,22 @@
             <!-- form start -->
             <form role="form">
               <div class="card-body">
+                <!-- Instanciacion del campo Cedula -->
                 <div class="form-group">
                   <label>Cédula</label>
                   <input type="text" [(ngModel)]="idNumber" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su cédula">
                 </div>
+                <!-- Instanciacion del campo Nombre -->
                 <div class="form-group">
                   <label>Nombre</label>
                   <input type="text" [(ngModel)]="name" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su nombre completo">
                 </div>
+                <!-- Instanciacion del campo Usuario -->
                 <div class="form-group">
                   <label>Usuario</label>
                     <input type="text" [(ngModel)]="user" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su usuario">
                 </div>
-
+                <!-- Instanciacion del campo del correo  -->
                 <div class="form-group">
                   <label>Correo electronico</label>
                     <input type="email"  [(ngModel)]="email" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su correo">
@@ -56,7 +59,7 @@
 
               </div>
               <!-- /.card-body -->
-
+              <!-- Instanciacion del boton -->
               <div class="card-footer">
                 <button type="submit" (click)="saveClient()" class="btn btn-primary">Guardar cliente</button>
               </div>

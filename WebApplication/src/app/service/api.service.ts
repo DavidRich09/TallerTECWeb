@@ -19,7 +19,10 @@ export class ApiService {
     return this.http.post(urlTrue, body);
   }
 
-
+  /**
+   * Metodo para realizar el POST de las citas nuevas
+   * @param body informacion de la cita
+   */
   public PostCite(body:any){
 
     let urlCite = this.url + "Quote/saveQuote";
@@ -27,17 +30,26 @@ export class ApiService {
     return this.http.post(urlCite, body);
   }
 
+  /**
+   * Metodo para ejecutar el reporte de los clientes que registran mas visitas
+   */
   public ClientReport(){
     let urlReportC = this.url + "Report/ClientReport"
     return this.http.get(urlReportC);
   }
 
+  /**
+   * Metodo para ejecutar el reporte de los vehiculos que registran mas visitas
+   */
   public LicReport(){
     let urlReportL = this.url + "Report/LicReport"
     return this.http.get(urlReportL);
   }
 
-
+  /**
+   * Metodo para realizar el POST de los clientes nuevos
+   * @param body informacion de la cita
+   */
   public  PostClient(body:any){
 
     let urlTrue = this.url + "Client/saveClientClient";

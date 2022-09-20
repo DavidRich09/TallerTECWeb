@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
 
+/**
+ * Definicion de asociaciones
+ */
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -8,6 +11,10 @@ import { ApiService } from 'src/app/service/api.service';
 
   ]
 })
+
+/**
+ * Definicion de las vaiables asociadas a los campos de texto
+ */
 export class ClientComponent implements OnInit {
   idNumber: any;
   name: any;
@@ -15,11 +22,18 @@ export class ClientComponent implements OnInit {
   email: any;
   password: any;
 
+  /**
+   * Constructor del API para conectar la base de datos con la pagina web
+   * @param Api
+   */
   constructor(private Api : ApiService) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * Metodo donde se validan las entradas y se envia la infromacion a la base de datos
+   */
   saveClient() {
     //verificar que los campos no esten vacios
     if (this.idNumber == undefined || this.name == undefined || this.user == undefined || this.email == undefined ||

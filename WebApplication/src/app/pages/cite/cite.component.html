@@ -1,5 +1,5 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
+  <!-- Contenido del header -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-6">
@@ -16,7 +16,7 @@
     </div><!-- /.container-fluid -->
   </section>
 
-  <!-- Main content -->
+  <!-- Contenido del Main -->
   <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -31,32 +31,37 @@
             <!-- form start -->
             <form role="form">
               <div class="card-body">
+                <!-- Instanciacion del campo Encargado -->
                 <div class="form-group">
                   <label>Encargado</label>
                   <input type="text" [(ngModel)]="responsible" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese el trabajador encargado">
                 </div>
+                <!-- Instanciacion del campo Asistente -->
                 <div class="form-group">
                   <label>Asistente</label>
                   <input type="text" [(ngModel)]="assistant" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese el trabajador asistente">
                 </div>
+                <!-- Instanciacion del campo Placa -->
                 <div class="form-group">
                   <label>Placa</label>
                   <input type="text" [(ngModel)]="licensePlate" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese la placa del vehiculo">
                 </div>
+                <!-- Instanciacion del campo Servicio -->
                 <div class="form-group">
                   <label>Servicio</label>
                   <input type="text" [(ngModel)]="service" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese el servicio requerido">
                 </div>
+                <!-- Instanciacion del campo Cliente -->
                 <div class="form-group">
                   <label>Cliente</label>
                   <input type="text" [(ngModel)]="client" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su usuario">
                 </div>
-
+                <!-- Instanciacion del campo Sucursal -->
                 <div class="form-group">
                   <label>Sucursal</label>
                   <input type="text" [(ngModel)]="office" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese la sucursal donde se efectuara el servicio">
                 </div>
-
+                <!-- Instanciacion del campo para la fecha de reserva -->
                 <div class="form-group">
                   <label>Fecha de reserva</label>
                   <div class="input-group">
@@ -76,7 +81,7 @@
 
               </div>
               <!-- /.card-body -->
-
+              <!-- Instanciacion del boton -->
               <div class="card-footer">
                 <button type="submit" (click)="saveCite()" class="btn btn-primary">Agendar cita</button>
               </div>
