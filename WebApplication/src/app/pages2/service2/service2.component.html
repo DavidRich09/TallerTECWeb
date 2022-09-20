@@ -32,6 +32,11 @@
             <form role="form">
               <div class="card-body">
                 <div class="form-group">
+                  <label>Cliente</label>
+                  <input type="text" [(ngModel)]="client" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese su nombre">
+                </div>
+
+                <div class="form-group">
                   <label>Placa del Vehiculo</label>
                   <input type="text" [(ngModel)]="plateNumber" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese la placa del vehiculo">
                 </div>
@@ -47,15 +52,23 @@
                 <div class="form-group mb-3">
                   <label>Sucursal:</label>
                   <select [(ngModel)]="office" [ngModelOptions] = "{standalone: true}" class="form-control" id="OfficeSelection">
-                    <option>Worker</option>
-                    <option>Client</option>
+                    <option>Cartago Centro</option>
+                    <option>Oreamuno de Cartago</option>
+                    <option>Pinares de Curridabat</option>
+                    <option>Rio de Oro Santa Ana</option>
+                    <option>Ciudad de Panama</option>
                   </select>
                 </div>
                 <div class="form-group mb-3">
                   <label>Servicio:</label>
                   <select [(ngModel)]="service" [ngModelOptions] = "{standalone: true}" class="form-control" id="ServiceSelection">
-                    <option>Worker</option>
-                    <option>Client</option>
+                    <option>Cambio de Aceite</option>
+                    <option>Cambio de Llantas</option>
+                    <option>Alineado y Tramado</option>
+                    <option>Revision 5k km</option>
+                    <option>Revision 10k km</option>
+                    <option>Revision 15k km</option>
+                    <option>Revision 20k km</option>
                   </select>
                 </div>
               </div>

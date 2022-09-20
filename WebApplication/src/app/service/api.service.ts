@@ -62,4 +62,9 @@ export class ApiService {
 
   }
 
+  public GetRandomWorker(){
+    let urlTrue = this.url + "Api/requestWorkerR";
+    return this.http.get(urlTrue);
+  }
+
 }
