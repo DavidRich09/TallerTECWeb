@@ -74,4 +74,16 @@ export class ApiService {
 
   }
 
+  public GetRandomWorker(){
+    let urlTrue = this.url + "Api/requestWorkerR";
+    return this.http.get(urlTrue);
+  }
+
+  public GenerateBill(licensePlate: string, date: string, service: string){
+    date = date.replace("/","%2F");
+    date = date.replace("/","%2F");
+    let urlTrue = this.url + "Report/QuoteReport/" + licensePlate + "/" + date + "/" + service;
+    return this.http.get(urlTrue);
+  }
+
 }

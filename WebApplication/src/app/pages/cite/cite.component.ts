@@ -50,10 +50,15 @@ export class CiteComponent implements OnInit {
         service: this.service,
         client: this.client,
         office: this.office,
-        date: this.date
+        date: this.date,
+        replacements: [{
+          licensePlate: this.licensePlate,
+          replacement: "",
+        }]
       }).subscribe((data) => {
         console.log("Cita agendada");
         console.log(data);
+        alert("Cita Agendada");
       });
     }
   }

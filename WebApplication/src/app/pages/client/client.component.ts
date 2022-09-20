@@ -48,7 +48,18 @@ export class ClientComponent implements OnInit {
           name: this.name,
           user: this.user,
           email: this.email,
-          password: this.password
+          password: this.password,
+          address : [{
+            clientId : this.idNumber,
+            nstreet : "",
+            province : "",
+            district : "",
+            canton : "",
+          }],
+          phone : [{
+            clientId : this.idNumber,
+            phone : ""
+          }]
         }).subscribe((data) => {
           console.log("Usuario almacenado");
           console.log(data);
