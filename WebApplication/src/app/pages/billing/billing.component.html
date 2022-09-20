@@ -1,1 +1,76 @@
-<p>billing works!</p>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-6">
+        <div class="col-sm-6">
+          <h1>Facturar Cita</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Facturar Cita</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-10">
+          <!-- general form elements -->
+          <div class="card card-cyan">
+            <div class="card-header">
+              <h3 class="card-title">Facturar Cita</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="card-body">
+
+                <div class="form-group">
+                  <label>Placa</label>
+                  <input type="text" [(ngModel)]="licensePlate" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Ingrese la placa del vehiculo">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label>Servicio:</label>
+                  <select [(ngModel)]="service" [ngModelOptions] = "{standalone: true}" class="form-control" id="ServiceSelection">
+                    <option>Cambio de aceite</option>
+                    <option>Cambio de llantas</option>
+                    <option>Alineado y tramado</option>
+                    <option>Revision 5k km</option>
+                    <option>Revision 10k km</option>
+                    <option>Revision 15k km</option>
+                    <option>Revision 20k km</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Fecha</label>
+                  <input type="text" [(ngModel)]="date" [ngModelOptions] = "{standalone: true}" class="form-control" placeholder="Fecha de la Cita">
+                </div>
+
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" (click)="makeBilling()" class="btn btn-primary">Agendar cita</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+          <!-- /.card -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
