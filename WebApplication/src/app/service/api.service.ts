@@ -128,4 +128,20 @@ export class ApiService {
     return this.http.get(urlTrue);
   }
 
+  public GetBills(id : string){
+    let urlTrue = this.url + "Quote/requestBills/" + id;
+    return this.http.get(urlTrue);
+  }
+
+  public GetUser(){
+    let urlTrue = this.url + "Client/requestactive";
+    return this.http.get(urlTrue);
+  }
+
+  public PostUser(body:any){
+    let urlTrue = this.url + "Client/saveactive";
+    console.log("body: ", body);
+    return this.http.post(urlTrue, body);
+  }
+
 }

@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild, AfterViewInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from "../../service/api.service";
+import { BillsComponent } from "../../pages2/bills/bills.component";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class LoginComponent implements OnInit {
 
@@ -13,16 +14,13 @@ export class LoginComponent implements OnInit {
   id: any;
   password: any;
 
-  constructor( private router: Router, private Api : ApiService ) { }
+  constructor( private router: Router, private Api : ApiService) { }
 
 
   ngOnInit(): void {
   }
 
   onLogin() {
-    console.log("login");
-    console.log("role "+ this.role);
-    console.log("email "+ this.id);
 
     if (this.role == "" || this.id == "" || this.password == "") {
       alert("Ingrese sus Datos y seleccione su rol");
@@ -48,17 +46,16 @@ export class LoginComponent implements OnInit {
 
         let json = JSON.parse(JSON.stringify(data));
 
-        console.log(json);
-
         if (json["message"] == "client not registered") {
           alert("Usuario no encontrado");
         } else {
           if (json["message"]["password"] == this.password) {
 
-            alert("Bienvenido");
+            this.Api.PostUser(json["message"]["id"]);
             this.router.navigate(['/clients']);
-          } else {
-            console.log("contra ingresada: " + this.password + " contra en bd: " + json["message"]["password"]);
+            console.log("id: " + json["message"]["id"]);
+          }
+           else {
             alert("Contraseña incorrecta");
           }
         }
