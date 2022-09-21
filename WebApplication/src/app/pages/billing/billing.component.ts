@@ -19,6 +19,10 @@ export class BillingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Metodo para solicitar
+   */
+
   makeBilling() {
     if (this.licensePlate == "" || this.date == "" || this.service == "") {
       alert("Todos los campos son obligatorios");

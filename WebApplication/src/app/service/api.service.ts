@@ -7,7 +7,6 @@ import {Observable} from "rxjs";
 })
 export class ApiService {
 
-
   url:string = "http://localhost:9968/";
 
   constructor(private http: HttpClient) { }
@@ -58,6 +57,12 @@ export class ApiService {
 
   }
 
+  /**
+   * Get de cliente por id
+   * @param id
+   * @constructor
+   */
+
   public GetClientById(id : string){
 
     let urlTrue = this.url + "Client/requestClient/" + id;
@@ -65,6 +70,12 @@ export class ApiService {
     return this.http.get(urlTrue);
 
   }
+
+  /**
+   * Metodo para realizar un get de un trabajador
+   * @param id
+   * @constructor
+   */
 
   public GetWorkerById(id : string){
 
@@ -74,15 +85,46 @@ export class ApiService {
 
   }
 
+  /**
+   * metodo para realizar un get de un trabajador random
+   * @constructor
+   */
+
   public GetRandomWorker(){
     let urlTrue = this.url + "Api/requestWorkerR";
     return this.http.get(urlTrue);
   }
 
+  /**
+   * Metodo para realizar un get para generar reporte de citas
+   * @param licensePlate
+   * @param date
+   * @param service
+   * @constructor
+   */
+
   public GenerateBill(licensePlate: string, date: string, service: string){
     date = date.replace("/","%2F");
     date = date.replace("/","%2F");
     let urlTrue = this.url + "Report/QuoteReport/" + licensePlate + "/" + date + "/" + service;
+    return this.http.get(urlTrue);
+  }
+
+  /**
+   * Metodo para realizar un get para generar el reporte de las oficinas
+   * @param startDate
+   * @param finalDate
+   * @constructor
+   */
+
+  public GenerateOfficeReport(startDate:string, finalDate:string){
+    startDate = startDate.replace("/","%2F");
+    startDate = startDate.replace("/","%2F");
+    finalDate = finalDate.replace("/","%2F");
+    finalDate = finalDate.replace("/","%2F");
+
+    let urlTrue = this.url + "Report/OfiiceReport/" + startDate + "/" + finalDate;
+
     return this.http.get(urlTrue);
   }
 

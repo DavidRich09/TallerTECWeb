@@ -13,7 +13,7 @@
       </div>
       <div class="card-footer">
         <!-- Boton de la caja -->
-        <button type="submit"  class="btn btn-block btn-info">Generar reporte</button>
+        <button type="submit"  (click)="OfficeReport()" class="btn btn-block btn-info">Generar reporte</button>
       </div>
     </div>
   </div>
@@ -52,6 +52,16 @@
         <button type="submit" (click)="ClientReport()" class="btn btn-block btn-success">Generar reporte</button>
       </div>
     </div>
+  </div>
+
+  <div class="form-group ml-2">
+    <label for="exampleInputEmail1">Fecha inicial</label>
+    <input type="email"  [(ngModel)]="startDate" [ngModelOptions] = "{standalone: true}" class="form-control" id="exampleInputEmail1" placeholder="dd/mm/yyyy">
+  </div>
+
+  <div class="form-group ml-2">
+    <label for="exampleInputEmail1">Fecha final</label>
+    <input type="email"  [(ngModel)]="finalDate" [ngModelOptions] = "{standalone: true}"  class="form-control"  id="exampleInputEmail2" placeholder="dd/mm/yyyy">
   </div>
 
 </div>
